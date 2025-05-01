@@ -1,0 +1,39 @@
+{
+	"name": "rollup-plugin-limbo",
+	"version": "0.0.1",
+	"type": "module",
+	"keywords": [
+		"limbo",
+		"llm",
+		"ai"
+	],
+	"scripts": {
+		"build": "tsup"
+	},
+	"files": [
+		"package.json",
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"peerDependencies": {
+		"rollup": "^4.40.1"
+	},
+	"devDependencies": {
+		"@types/node": "^22.15.3",
+		"rollup": "^4.40.1",
+		"typescript": "^5.8.3",
+		"prettier": "^3.5.3",
+		"tsup": "^8.4.0"
+	}
+}
