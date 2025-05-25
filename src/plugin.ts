@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { builtinModules } from "node:module";
 import type { Plugin } from "rollup";
 import { getDefaultPluginsDirectory } from "./utils";
 
@@ -28,17 +27,6 @@ export function plugin(opts?: plugin.Options): Plugin {
 
 	return {
 		name: "limbo",
-		options(userOpts) {
-			return {
-				...userOpts,
-				external: [
-					"limbo",
-					"react",
-					...builtinModules,
-					...builtinModules.map((m) => `node:${m}`),
-				],
-			};
-		},
 		outputOptions(userOpts) {
 			return {
 				...userOpts,
