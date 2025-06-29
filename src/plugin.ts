@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "rollup";
-import { getDefaultPluginsDirectory } from "./utils";
 
 export declare namespace plugin {
 	interface Options {
@@ -61,13 +60,11 @@ export function plugin(opts?: plugin.Options): Plugin {
 			});
 		},
 		closeBundle() {
-			if (outDir === undefined || !opts?.copyToPluginsDir) {
+			if (outDir === undefined || !opts?.copyToPluginsDir || !opts.pluginsDir) {
 				return;
 			}
 
-			const pluginsDirectory = opts?.pluginsDir ?? getDefaultPluginsDirectory();
-
-			const pluginDirectory = path.join(pluginsDirectory, pluginManifest!.id);
+			const pluginDirectory = path.join(opts?.pluginsDir, pluginManifest!.id);
 
 			try {
 				fs.cpSync(outDir, pluginDirectory, {
