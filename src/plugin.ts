@@ -60,8 +60,12 @@ export function plugin(opts?: plugin.Options): Plugin {
 			});
 		},
 		closeBundle() {
-			if (outDir === undefined || !opts?.copyToPluginsDir || !opts.pluginsDir) {
+			if (outDir === undefined || !opts?.copyToPluginsDir) {
 				return;
+			}
+
+			if (!opts?.pluginsDir) {
+				this.error(`"pluginsDir" is required when "copyToPluginsDir" is enabled`);
 			}
 
 			const pluginDirectory = path.join(opts?.pluginsDir, pluginManifest!.id);
