@@ -1,6 +1,6 @@
 /** External dependencies that should not be bundled by Rollup when building a plugin */
 export const limboExternals = [
-	"@limbo/api",
+	"@limbo-chat/api",
 	"react",
 	"react/jsx-runtime",
 	"@sinclair/typebox",
