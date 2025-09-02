@@ -1,7 +1,16 @@
 {
 	"name": "rollup-plugin-limbo",
-	"version": "0.0.1",
 	"type": "module",
+	"description": "Rollup plugin for developing Limbo plugins",
+	"version": "0.0.1",
+	"author": {
+		"name": "Wes Lowe",
+		"email": "wesley.jlowe10@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/limbo-chat/rollup-plugin"
+	},
 	"keywords": [
 		"limbo",
 		"llm",
