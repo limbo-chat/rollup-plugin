@@ -2,7 +2,7 @@
 	"name": "rollup-plugin-limbo",
 	"type": "module",
 	"description": "Rollup plugin for developing Limbo plugins",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": {
 		"name": "Wes Lowe",
 		"email": "wesley.jlowe10@gmail.com"
